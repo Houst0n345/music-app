@@ -1,12 +1,12 @@
 import ApolloClient from 'apollo-client';
-import {WebSoketLink} from 'apollo-link-ws';
+import {WebSocketLink} from 'apollo-link-ws';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 
 const client = new ApolloClient({
-    link: new WebSoketLink({
+    link: new WebSocketLink({
         uri: 'wss://react-music-appp.herokuapp.com/v1/graphql',
         options: {
-            reconect: true
+            reconnect: true
         }
     }),
     cache: new InMemoryCache()
