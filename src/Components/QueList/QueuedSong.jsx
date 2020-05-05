@@ -4,6 +4,8 @@ import Avatar from "@material-ui/core/Avatar";
 import {Delete} from "@material-ui/icons";
 import IconButton from "@material-ui/core/IconButton";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import {useMutation} from "@apollo/react-hooks";
+import {ADD_OR_REMOVE_FROM_QUEUE} from "../../graphql/mutations";
     
 
 const useStyles = makeStyles({
@@ -31,11 +33,24 @@ const useStyles = makeStyles({
 
 function QueuedSong({song}) {
     const s = useStyles();
-    const {url, artist, title} = song;
+    const {thumbnail, artist, title} = song;
+    const [addOrRemoveFromQueue] = useMutation(ADD_OR_REMOVE_FROM_QUEUE, {
+        onCompleted: data => {
+            localStorage.setItem("queue", JSON.stringify(data.addOrRemoveFromQueue))
+        }
+    })
+
+    let handleAddOrRemoveFromQueue = () => {
+        // обработка добавления нужна или нет?
+        addOrRemoveFromQueue({
+                variables: {input: {...song, __typename: 'Song'}}
+            }
+        )
+    }
 
     return (
          (<div className={s.container}>
-            <Avatar src={url} alt={'Song thumbnail'} className={s.avatar}/>
+            <Avatar src={thumbnail} alt={'Song thumbnail'} className={s.avatar}/>
             <div className={s.songInfoContainer}>
                 <Typography variant={'subtitle2'} className={s.text}>
                     {title}
@@ -45,7 +60,7 @@ function QueuedSong({song}) {
                 </Typography>
             </div>
             <IconButton>
-                <Delete color={'error'}/>
+                <Delete color={'error'} onClick={handleAddOrRemoveFromQueue}/>
             </IconButton>
         </div>
         )
