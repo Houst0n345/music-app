@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Houst0n345/music-app/static/css/main.46fa800e.chunk.css",
+    "main.js": "/Houst0n345/music-app/static/js/main.30d09e17.chunk.js",
+    "main.js.map": "/Houst0n345/music-app/static/js/main.30d09e17.chunk.js.map",
+    "runtime-main.js": "/Houst0n345/music-app/static/js/runtime-main.db0e4055.js",
+    "runtime-main.js.map": "/Houst0n345/music-app/static/js/runtime-main.db0e4055.js.map",
+    "static/js/2.90fff895.chunk.js": "/Houst0n345/music-app/static/js/2.90fff895.chunk.js",
+    "static/js/2.90fff895.chunk.js.map": "/Houst0n345/music-app/static/js/2.90fff895.chunk.js.map",
+    "index.html": "/Houst0n345/music-app/index.html",
+    "precache-manifest.0ce8bc1996907978add6b464d1ab2128.js": "/Houst0n345/music-app/precache-manifest.0ce8bc1996907978add6b464d1ab2128.js",
+    "service-worker.js": "/Houst0n345/music-app/service-worker.js",
+    "static/css/main.46fa800e.chunk.css.map": "/Houst0n345/music-app/static/css/main.46fa800e.chunk.css.map",
+    "static/js/2.90fff895.chunk.js.LICENSE.txt": "/Houst0n345/music-app/static/js/2.90fff895.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.db0e4055.js",
+    "static/js/2.90fff895.chunk.js",
+    "static/css/main.46fa800e.chunk.css",
+    "static/js/main.30d09e17.chunk.js"
+  ]
+}
